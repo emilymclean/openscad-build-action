@@ -128,6 +128,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git cat-file -t "${{ needs.update-image.outputs.commit_hash }}"
       - name: Create tag for release
         uses: rickstaa/action-create-tag@v1
         with:
