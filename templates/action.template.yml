@@ -20,7 +20,7 @@ runs:
   image: '{{ .image }}'
   args:
     - ${{`{{ inputs.input-file }}`}}
-    - ${{`{{ inputs.output-file }}
+    - ${{`{{ inputs.output-file }}`}}
     - ${{`{{ inputs.customizer-parameter-file }}`}}
     - ${{`{{ inputs.customizer-parameter-set }}`}}
 branding:
