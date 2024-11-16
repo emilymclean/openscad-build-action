@@ -1,9 +1,6 @@
-# action.yml
 name: 'OpenSCAD Build Action'
 description: 'Use OpenSCAD CLI to automatically generate artifacts in Github Actions'
-branding:
-  icon: 'box'
-  color: 'blue'
+author: 'Emily McLean'
 inputs:
   input-file:
     description: 'OpenSCAD source file'
@@ -20,9 +17,12 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://ghcr.io/emilymclean/openscad-build-action:1.1.0'
   args:
     - ${{ inputs.input-file }}
     - ${{ inputs.output-file }}
     - ${{ inputs.customizer-parameter-file }}
     - ${{ inputs.customizer-parameter-set }}
+branding:
+  icon: 'box'
+  color: 'blue'
