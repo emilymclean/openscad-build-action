@@ -12,7 +12,7 @@ This action uses OpenSCAD CLI to generate artifacts in Github Actions
 
 ## Example usage
 ```
-uses: emilymclean/emilymclean/openscad-build-action@v1
+uses: emilymclean/openscad-build-action@v1
 with:
   input-file: 'model.scad'
   output-file: 'output_with_something.stl'
