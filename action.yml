@@ -3,17 +3,17 @@ description: 'Use OpenSCAD CLI to automatically generate artifacts in Github Act
 author: 'Emily McLean'
 inputs:
   input-file:
-    description: 'OpenSCAD source file'
+    description: 'OpenSCAD source file.'
     required: true
   output-file:
-    description: 'Name of the output file (stl, off, amf, 3mf, csg, dxf, svg, png, echo, ast, term, nef3, nefdbg)'
+    description: 'Name of the output file (stl, off, amf, 3mf, csg, dxf, svg, png, echo, ast, term, nef3, nefdb).'
     required: true
     default: 'output.stl'
   customizer-parameter-file:
-    description: 'Path to the customizer json parameter file'
+    description: 'Path to the customizer json parameter file.'
     required: false
   customizer-parameter-set:
-    description: 'Name of the parameter set to use from the customizer file'
+    description: 'Name of the parameter set to use from the customizer file.'
     required: false
 runs:
   using: 'docker'
