@@ -1,13 +1,13 @@
-#!/bin/bash -l
+#!/bin/bash
 
-cmd="openscad -o $GITHUB_WORKSPACE/$2 $GITHUB_WORKSPACE/$1"
+cmd=()
 
 if [[ -n "$3" ]]; then
-  cmd="$cmd -p $GITHUB_WORKSPACE/$3"
+  cmd+=("-p" "$GITHUB_WORKSPACE/$3")
 fi
 
 if [[ -n "$4" ]]; then
-  cmd="$cmd -P $4"
+  cmd+=("-P" "$4")
 fi
 
-$cmd
+openscad -o "$GITHUB_WORKSPACE/$2" "$GITHUB_WORKSPACE/$1" "${cmd[@]}"
