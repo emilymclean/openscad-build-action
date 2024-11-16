@@ -81,6 +81,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     outputs:
       commit_hash: ${{ steps.auto-commit.outputs.commit_hash }}
+      changes_detected: ${{ steps.auto-commit.outputs.changes_detected }}
     needs: 
       - docker
       - version
@@ -124,7 +125,7 @@ jobs:
       contents: write
     outputs:
       upload_url: ${{ steps.create_release.outputs.upload_url }}
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && needs.update-image.outputs.changes_detected
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
