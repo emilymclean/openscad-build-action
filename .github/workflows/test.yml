@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - uses: ./
         with:
           input-file: test/example.scad
@@ -19,3 +19,19 @@ jobs:
         with:
           name: example-stl
           path: test/example.stl
+  test-readme-generation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Update README.md
+        uses: emilymclean/template-render-action@v1.0.2
+        env:
+          ACTION_REPO: ${{ github.repository }}
+          ACTION_VERSION: 1
+        with:
+          template-file: templates/README.template.md
+          output-file: README.md
+          engine: mustache
+      - name: Cat
+        run: cat README.md
