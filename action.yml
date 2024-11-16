@@ -17,7 +17,7 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/emilymclean/openscad-build-action:1.1.1'
+  image: 'docker://ghcr.io/emilymclean/openscad-build-action:1.1.2'
   args:
     - ${{ inputs.input-file }}
     - ${{ inputs.output-file }}
