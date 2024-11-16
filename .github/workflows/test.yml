@@ -28,7 +28,7 @@ jobs:
         uses: emilymclean/template-render-action@v1.0.2
         env:
           ACTION_REPO: ${{ github.repository }}
-          ACTION_VERSION: v1.0.0
+          ACTION_VERSION: 1
         with:
           template-file: templates/README.template.md
           output-file: README.md
